@@ -1,0 +1,119 @@
+body {
+  background-color: #fcfcfc;
+}
+
+.App {
+  text-align: center;
+}
+
+.tabs {
+  margin: 'auto';
+  display: inline-flex;
+}
+
+.button-all {
+  width: 98px;
+  height: 31px;
+  padding: 3px 39px 0 40px;
+  border-radius: 2px;
+  border: solid 1px #d6d6d6;
+  background-color: transparent;
+  margin-right: -1px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  color: #606060;
+  border-right: 0px;
+}
+
+.button-faves {
+  width: 98px;
+  height: 31px;
+  padding: 3px 16px 0 17px;
+  border-radius: 2px;
+  border: solid 1px #d6d6d6;
+  background-color: transparent;
+  margin-right: -1px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  color: #606060;
+  border-left: 0px;
+}
+
+.button-all-select {
+  width: 98px;
+  height: 31px;
+  padding: 3px 39px 0 40px;
+  border-radius: 2px;
+  background-color: transparent;
+  margin-right: -1px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  border: solid 1px #1797ff;
+  color: #1797ff;
+  border-right: solid 1px #1797ff;
+}
+
+.button-all:hover, .button-faves:hover {
+  cursor: pointer;
+}
+
+.button-faves-select {
+  width: 98px;
+  height: 31px;
+  padding: 3px 16px 0 17px;
+  border-radius: 2px;
+  background-color: transparent;
+  margin-right: -1px;
+  font-family: Roboto;
+  font-size: 16px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.75;
+  letter-spacing: normal;
+  text-align: center;
+  border: solid 1px #1797ff;
+  color: #1797ff;
+  border-left: solid 1px #1797ff;
+}
+
+.title {
+  width: 208px;
+  height: 28px;
+  object-fit: contain;
+  font-family: Baskerville;
+  font-size: 28px;
+  font-weight: normal;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1;
+  letter-spacing: normal;
+  color: #3b3b3b;
+  text-transform: uppercase;
+}
+
+.container-title {
+  height: 114px;
+  margin: 0 0 70px;
+  padding: 20px 0px 0px 10vw;
+  box-shadow: 0 1px 4px 0 rgba(0, 21, 41, 0.12);
+  background-image: linear-gradient(to bottom, #ececec -32%, #fff 124%);
+}
