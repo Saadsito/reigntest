@@ -1,7 +1,6 @@
 .li-card {
   list-style: none;
   width: 450pt;
-  height: 123pt;
   margin: auto;
   opacity: 0.8;
   border-radius: 6px;
@@ -52,7 +51,7 @@
   position: absolute;
   right: 0;
   width: 68px;
-  height: 123pt;
+  height: 100%;
 }
 
 .button-base-card {
