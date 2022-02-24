@@ -1,0 +1,66 @@
+.li-card {
+  list-style: none;
+  width: 450pt;
+  margin: auto;
+  opacity: 0.8;
+  border-radius: 6px;
+  border: solid 1px #979797;
+  background-color: #fff;
+  text-align: left;
+  display: inline-flex;
+}
+
+@media (max-width: 700px) {
+  .li-card {
+    width: 100%;
+  }
+  
+}
+
+.card-time{
+  display: inline-flex;
+}
+
+.card-time-text {
+  font-family: Roboto;
+  color: #767676;
+  margin-left: 10px;
+  margin-top: 19.5px;
+}
+
+.card-text {
+  margin-right: 25px;
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nonwrap;
+}
+
+.card-text-title {
+  font-family: Roboto;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.43;
+  letter-spacing: 0.25px;
+  color: #6b6b6b;
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nonwrap;
+}
+
+.like-button {
+  width: 13%;
+  background-color: transparent; 
+  border: none; 
+  cursor: pointer; 
+}
+
+.button-base-card {
+  display: block;
+  text-decoration: none;
+  width: 87%;
+}
+
+.like-button:hover, .button-base-card:hover {
+  background-color: #60606010;
+}
