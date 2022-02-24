@@ -9,7 +9,6 @@ body {
 .tabs {
   margin: 'auto';
   display: inline-flex;
-  margin-left: 18pt;
 }
 
 .button-all {

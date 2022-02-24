@@ -1,6 +1,7 @@
 .li-card {
   list-style: none;
   width: 450pt;
+  height: 123pt;
   margin: auto;
   opacity: 0.8;
   border-radius: 6px;
@@ -46,19 +47,24 @@
   text-overflow: ellipsis; 
   overflow: hidden; 
   white-space: nonwrap;
+  margin-right: 33pt;
 }
 
 .like-button {
-  width: 13%;
   background-color: transparent; 
   border: none; 
-  cursor: pointer; 
+  cursor: pointer;
+  z-index: 1000;
+  position: absolute;
+  margin-left: 400pt;
+  width: 68px;
+  height: 123pt;
 }
 
 .button-base-card {
   display: block;
   text-decoration: none;
-  width: 87%;
+  width: 100%;
 }
 
 .like-button:hover, .button-base-card:hover {
