@@ -1,4 +1,4 @@
-import React, {useEffect, useState, useRef, useCallback} from "react";
+import React, {useState, useRef, useCallback} from "react";
 import './App.css';
 import clsx from "clsx";
 import { Card } from "./Card";
@@ -13,13 +13,15 @@ function App() {
   const [selectValue, setSelectValue] = useState("Select your news");
   const [cardFave, setCardFave] = useState([]);
 
+  //values ​​obtained from useSearch
   const {
     news,
     hasMore,
     loading
   } = useSearch(query, pageNumber)
 
-  const observer = useRef();
+  // "observer" and "lastNewElementRef" used they are used to have control of when the user reaches the end of the page to show more results, so an infinite scroll is given
+  const observer = useRef(); 
   const lastNewElementRef = useCallback(node => {
     if (loading) return;
     if (observer.current) observer.current.disconnect();
@@ -31,11 +33,13 @@ function App() {
     if (node) observer.current.observe(node);
   }, [loading, hasMore]);
 
+  // function that is called when the select is in "onFocus"
   const openOption = () => {
     setIsOpen(true);
     document.querySelector('.input-select').classList.toggle('active');
   }
 
+  // function that is called when the select is in "onBlur"
   const closeOption = () => {
     setTimeout(() => { 
       setIsOpen(false);
@@ -43,24 +47,28 @@ function App() {
     }, 100);
   }
 
+  // function that is called when the user clicks on the "React" option in the select
   const clickReact = () => {
     setSelectValue('React');
     setQuery('reactjs');
     setPageNumber(0);
   }
 
+  // function that is called when the user clicks on the "Angular" option in the select
   const clickAngular = () => {
     setSelectValue('Angular');
     setQuery('angular');
     setPageNumber(0);
   }
 
+  // function that is called when the user clicks on the "Vue" option in the select
   const clickVue = () => {
     setSelectValue('Vue');
     setQuery('vuejs');
     setPageNumber(0);
   }
 
+  // function that checks if the card is in the "cardFave" array to show the like button as liked or not
   const isLike = (data) => {
     if (cardFave.indexOf(data) < 0) {
       return false;

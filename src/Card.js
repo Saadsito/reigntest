@@ -7,7 +7,8 @@ export function Card({ data , inRef , setCardFave, cardFave, liked, fav}) {
 
   const [like, setLike] = useState(liked);
 
-  const clickLike = e => {
+  //This function is called when the user clicks the like button on a card
+  const clickLike = () => {
     setLike(!like);
     if(!like){
       setCardFave( [...cardFave, data])
@@ -23,6 +24,7 @@ export function Card({ data , inRef , setCardFave, cardFave, liked, fav}) {
     }
   }
 
+  //function that returns how long ago the news was created
   function timeSince(date) {
 
     var seconds = date / 1000;

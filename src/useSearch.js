@@ -6,10 +6,12 @@ export default function useSearch(query, pageNumber) {
   const [news, setNews] = useState([]);
   const [hasMore, setHasMore] = useState(false);
 
+  //every time a new query is requested, the "news" array will be cleaned so that it does not show us the same results
   useEffect(() => {
     setNews([])
   }, [query])
 
+  //data is obtained from the api
   useEffect(() => {
     setLoading(true);
     axios({
