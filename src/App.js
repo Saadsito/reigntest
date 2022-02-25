@@ -19,8 +19,6 @@ function App() {
     loading
   } = useSearch(query, pageNumber)
 
-  let limit = 0;
-
   const observer = useRef();
   const lastNewElementRef = useCallback(node => {
     if (loading) return;
@@ -61,6 +59,15 @@ function App() {
     setSelectValue('Vue');
     setQuery('vuejs');
     setPageNumber(0);
+  }
+
+  const isLike = (data) => {
+    if (cardFave.indexOf(data) < 0) {
+      return false;
+    }
+    else {
+      return true;
+    }
   }
 
   return (
@@ -114,7 +121,7 @@ function App() {
                     return n
                   }
                 }).map((n, index) => {
-                  return <Card key={index} inRef={lastNewElementRef} cardFave={cardFave} setCardFave={setCardFave} data={n}/>
+                  return <Card key={index} liked={isLike(n)} inRef={lastNewElementRef} cardFave={cardFave} setCardFave={setCardFave} data={n}/>
                 })
               ))
             }
@@ -126,7 +133,7 @@ function App() {
           <ul className="ul-cards">
             {
               cardFave && cardFave.map((data, i) => {
-                return <Card key={i} liked cardFave={cardFave} setCardFave={setCardFave} data={data}/>
+                return <Card key={i} fav liked cardFave={cardFave} setCardFave={setCardFave} data={data}/>
               })
             }
           </ul>

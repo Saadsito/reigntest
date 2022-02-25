@@ -3,7 +3,7 @@ import './Card.css';
 import { HiOutlineClock } from "react-icons/hi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
-export function Card({ data , inRef , setCardFave, cardFave, liked}) {
+export function Card({ data , inRef , setCardFave, cardFave, liked, fav}) {
 
   const [like, setLike] = useState(liked);
 
@@ -11,17 +11,15 @@ export function Card({ data , inRef , setCardFave, cardFave, liked}) {
     setLike(!like);
     if(!like){
       setCardFave( [...cardFave, data])
-      console.log(cardFave);
     }
     else if(like){
       const dataDelete = [...cardFave];
       const index = cardFave.indexOf(data);
       dataDelete.splice(index, 1);
-      if (index === 0) {
+      if (index === 0 && fav) {
         setLike(true);
       }
       setCardFave(dataDelete);
-      console.log(cardFave);
     }
   }
 
