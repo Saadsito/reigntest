@@ -13,6 +13,10 @@
 
 .card-time{
   display: inline-flex;
+  margin-right: 25px;
+  text-overflow: ellipsis; 
+  overflow: hidden; 
+  white-space: nonwrap;
 }
 
 .card-time-text {

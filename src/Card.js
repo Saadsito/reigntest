@@ -3,24 +3,86 @@ import './Card.css';
 import { HiOutlineClock } from "react-icons/hi";
 import { AiOutlineHeart, AiFillHeart } from "react-icons/ai";
 
-export function Card({ data }) {
+export function Card({ data , inRef , setCardFave, cardFave, liked}) {
 
-  const [like, setLike] = useState(false);
+  const [like, setLike] = useState(liked);
 
-  const clickLike = () => {
+  const clickLike = e => {
     setLike(!like);
+    if(!like){
+      setCardFave( [...cardFave, data])
+      console.log(cardFave);
+    }
+    else if(like){
+      const dataDelete = [...cardFave];
+      const index = cardFave.indexOf(data);
+      dataDelete.splice(index, 1);
+      if (index === 0) {
+        setLike(true);
+      }
+      setCardFave(dataDelete);
+      console.log(cardFave);
+    }
+  }
+
+  function timeSince(date) {
+
+    var seconds = date / 1000;
+  
+    var interval = seconds / 31536000;
+  
+    if (interval > 1) {
+      if (Math.floor(interval) === 1) {
+        return Math.floor(interval) + " year";
+      }
+      return Math.floor(interval) + " years";
+    }
+    interval = seconds * 31536000;
+    interval = seconds / 2592000;
+    if (interval > 1) {
+      if (Math.floor(interval) === 1) {
+        return Math.floor(interval) + " month";
+      }
+      return Math.floor(interval) + " months";
+    }
+    interval = seconds * 2592000;
+    interval = seconds / 86400;
+    if (interval > 1) {
+      if (Math.floor(interval) === 1) {
+        return Math.floor(interval) + " day";
+      }
+      return Math.floor(interval) + " days";
+    }
+    interval = seconds * 86400;
+    interval = seconds / 3600;
+    if (interval > 1) {
+      if (Math.floor(interval) === 1) {
+        return Math.floor(interval) + " hour";
+      }
+      return Math.floor(interval) + " hours";
+    }
+    interval = seconds * 3600;
+    interval = seconds / 60;
+    if (interval > 1) {
+      if (Math.floor(interval) === 1) {
+        return Math.floor(interval) + " minute";
+      }
+      return Math.floor(interval) + " minutes";
+    }
+    interval = seconds * 60;
+    return Math.floor(seconds) + " seconds";
   }
 
   return (
-    <li className="li-card">
-      <a className="button-base-card" target="_blank" href="https://bethesda.net/en/article/2RXxG1y000NWupPalzLblG/sunsetting-the-bethesda-net-launcher-and-migrating-to-steam">
+    <li className="li-card" ref={inRef}>
+      <a className="button-base-card" target="_blank" href={data.story_url}>
         <div style={{padding: '0 0 0 26px'}}>
           <div className="card-time">
             <p ><HiOutlineClock style={{ height: '26px', width: '26px', color: '#979797' }}/></p>
-            <p className="card-time-text">2 hours ago by author</p>
+            <p className="card-time-text">{timeSince(new Date(Date.now()).getTime() - new Date(data.created_at).getTime())} ago by {data.author}</p>
           </div>
           <div className="card-text">
-            <p className="card-text-title">Sunsetting the Bethesda.net launcher and migrating to Steam</p>
+            <p className="card-text-title">{data.story_title}</p>
           </div>
         </div>
       </a>

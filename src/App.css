@@ -49,6 +49,10 @@ body {
   text-align: center;
   color: #606060;
   border-left: 0px;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .button-all-select {
@@ -93,6 +97,10 @@ body {
   border: solid 1px #1797ff;
   color: #1797ff;
   border-left: solid 1px #1797ff;
+  clear: both;
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .title {
